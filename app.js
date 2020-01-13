@@ -34,7 +34,23 @@ function getProduct() {
 
   let products = JSON.parse(localStorage.getItem('products'));
   let productView = document.getElementById('list');
-  console.log('hola')
+  
+  if (products) {
+    
+  
+    for (let i = 0; i < products.length; i++) {
 
+      let now = products[i];
+      productView.innerHTML += '<div class="card">'
+        '<div class="card-body">'
+          '<div >'
+            '${now.name} '  
+          '</div>'
+        '</div>'
+      '</div>';
+
+
+    }
+  }
 }
 getProduct();
